@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Weather Report</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <h1>Weather for <span data-th-text="${cityName}"></span></h1>
+
+    <div class="container" data-th-object="${weatherReport}">
+        <img data-th-src="*{iconUrl}" alt="weather image">
+        <div class="text-container">
+            <h3 data-th-text="*{description}"></h3>
+            <h3>Temperature: <span data-th-text="*{temperature}"></span> &deg;C</h3>
+        </div>
+    </div>
+    <form method="GET" action="/">
+        <button type="submit">Return</button>
+    </form>
+    
+</body>
+</html>

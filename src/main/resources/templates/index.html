@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Report</title>
+</head>
+
+<body>
+
+    <h1>Find the City's Current Weather</h1>
+
+    <form method="GET" action="/weather">
+        <table>
+            <tr>
+                <td>City:</td>
+                <td>
+                    <input list="cityList" name="cityName" placeholder="Start typing a city name..." required>
+                    <datalist id="cityList">
+                        <option data-th-each="entry : ${cityMap}" data-th-value="${entry.key}"
+                            data-th-text="${entry.key}"></option>
+                    </datalist>
+                </td>
+            </tr>
+            <tr>
+                <td>Units:</td>
+                <td>
+                    <select name="units">
+                        <option value="metric" selected>Celsius</option>
+                        <option value="imperial">Fahrenheit</option>
+                        <option value="standard">Kelvin</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <button type="submit">Get Weather</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+
+</html>
